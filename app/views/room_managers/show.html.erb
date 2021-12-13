@@ -5,6 +5,12 @@
   <p class="lead"><%= @room_manager.email %> | <%= @room_manager.phone %> | <%= @room_manager.address %></p>
   <hr class="my-4">
   
+  <p>
+  <% if @room_manager.image.attached? %>
+    <%= image_tag @room_manager.image %>
+  <% end %>
+</p>
+  
   <p class="lead">
     <%= link_to 'Edit', edit_room_manager_path(@room_manager) %> |
 <%= link_to 'Back', room_managers_path %>
